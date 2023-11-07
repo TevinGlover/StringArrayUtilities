@@ -35,7 +35,7 @@ public class StringArrayUtils {
      */ // TODO
     public static String getSecondToLastElement(String[] array) {
         int lastSecondElement = array.length -2; //array.length -2
-        return array[lastSecondElement];
+        return array[lastSecondElement]; // need the arr[] with the number inside
 
 
        // return null;
@@ -47,7 +47,20 @@ public class StringArrayUtils {
      * @return true if the array contains the specified `value`
      */ // TODO
     public static boolean contains(String[] array, String value) {
-        return false;
+
+        boolean result = false;// setting the boolean to false
+
+        for (int i = 0 ; i<= array.length - 1; i++) {
+            // using a for loop ro run throught a for loop to check the value of i
+            if(array[i] == value){
+                // checks the value i==value
+                result = true;
+                // if found return result to true
+            }
+
+        }
+
+        return result;
     }
 
     /**
@@ -55,6 +68,7 @@ public class StringArrayUtils {
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
+        // split the array
         return null;
     }
 

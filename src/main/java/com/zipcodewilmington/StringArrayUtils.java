@@ -1,5 +1,8 @@
 package com.zipcodewilmington;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /**
  * Created by leon on 1/29/18.
  */
@@ -25,8 +28,8 @@ public class StringArrayUtils {
      * @return last element in specified array
      */ // TODO
     public static String getLastElement(String[] array) {
-        int lastElement = array.length -1; // length of the array minus length by one due to off set
-    return array[lastElement];
+        int lastElement = array.length - 1; // length of the array minus length by one due to off set
+        return array[lastElement];
     }
 
     /**
@@ -34,11 +37,11 @@ public class StringArrayUtils {
      * @return second to last element in specified array
      */ // TODO
     public static String getSecondToLastElement(String[] array) {
-        int lastSecondElement = array.length -2; //array.length -2
+        int lastSecondElement = array.length - 2; //array.length -2
         return array[lastSecondElement]; // need the arr[] with the number inside
 
 
-       // return null;
+        // return null;
     }
 
     /**
@@ -50,9 +53,9 @@ public class StringArrayUtils {
 
         boolean result = false;// setting the boolean to false
 
-        for (int i = 0 ; i<= array.length - 1; i++) {
+        for (int i = 0; i <= array.length - 1; i++) {
             // using a for loop ro run throught a for loop to check the value of i
-            if(array[i] == value){
+            if (array[i] == value) {
                 // checks the value i==value
                 result = true;
                 // if found return result to true
@@ -68,9 +71,29 @@ public class StringArrayUtils {
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
+
+
+        ArrayList yarra = new ArrayList();
+
         // split the array
-        return null;
+        for (int i = array.length -1; i >= 0; i--) {// for loop in reverse
+            // add (append) the elements to a new array
+            yarra.add(array[i]);
+            // return new array set up.
+        }
+             /**   String [] backWords = new String[yarra.size()];// turning the size of the Str to the same size of Arr
+                    for(int i =0; i<= array.length -1; i++){// add it object to the string arr
+                        backWords[i] = yarra.get(i).toString();
+                        //System.out.println(backWords[i]);// this shows that all object are going in backwards
+                    }
+        **/
+      //  return backWords;
+        return (String[])  yarra.toArray( new String[yarra.size()] ); // the one liner
+        // this takes in the to array method and cast it to a string aging.
+
+         //return null;
     }
+
 
     /**
      * @param array array of String objects

@@ -76,22 +76,22 @@ public class StringArrayUtils {
         ArrayList yarra = new ArrayList();
 
         // split the array
-        for (int i = array.length -1; i >= 0; i--) {// for loop in reverse
+        for (int i = array.length - 1; i >= 0; i--) {// for loop in reverse
             // add (append) the elements to a new array
             yarra.add(array[i]);
             // return new array set up.
         }
-             /**   String [] backWords = new String[yarra.size()];// turning the size of the Str to the same size of Arr
-                    for(int i =0; i<= array.length -1; i++){// add it object to the string arr
-                        backWords[i] = yarra.get(i).toString();
-                        //System.out.println(backWords[i]);// this shows that all object are going in backwards
-                    }
-        **/
-      //  return backWords;
-        return (String[])  yarra.toArray( new String[yarra.size()] ); // the one liner
+        /**   String [] backWords = new String[yarra.size()];// turning the size of the Str to the same size of Arr
+         for(int i =0; i<= array.length -1; i++){// add it object to the string arr
+         backWords[i] = yarra.get(i).toString();
+         //System.out.println(backWords[i]);// this shows that all object are going in backwards
+         }
+         */
+        //  return backWords;
+        return (String[]) yarra.toArray(new String[yarra.size()]); // the one liner + for loop
         // this takes in the to array method and cast it to a string aging.
 
-         //return null;
+        //return null;
     }
 
 
@@ -100,17 +100,69 @@ public class StringArrayUtils {
      * @return true if the order of the array is the same backwards and forwards
      */ // TODO
     public static boolean isPalindromic(String[] array) {
-        return false;
+        // reverse array
+        String[] reversed = reverse(array);
+
+        // iterate through both arrays in parallel
+        for (int i = 0; i < reversed.length; i++) {
+            // check ith element in the reversed array
+            String currentElementReversed = reversed[i];
+
+            // check ith element in the input array
+            String currentElement = array[i];
+
+            // check if elements are identical
+            boolean isIdentical = currentElementReversed.equals(currentElement);
+
+            // if the are not identical
+            if(!isIdentical) {
+
+                // this is non-palindromic
+                return false;
+            }
+        }
+        // if we complete the loop without ever returning false (as declared on line 121),
+        // then clearly we return true;
+        return true; //p.s leon is a goat.
     }
+
+
+
+
+
+
+
 
     /**
      * @param array array of String objects
      * @return true if each letter in the alphabet has been used in the array
      */ // TODO
     public static boolean isPangramic(String[] array) {
-        return false;
-    }
 
+        char[] letter = "abcdefghijklmnopqrstuvwxyz".toCharArray();
+        // create a list to compare the array with.
+        // if element all element matches the elements in the array then return true.
+        for (int i = 0; i < array.length; i++) {
+            // if array contain all of letter
+
+            // check the element in the input array
+            String element = array[i];
+
+            // check if the array is contained all elements between a -z,
+            boolean isAtoZ = element.contains("abcdefghijklmnopqrstuvwxyz");
+            if (isAtoZ) {
+
+              return false;
+
+
+            } else if (letter.equals(element)) {
+                return true;
+
+            }
+
+        }
+        return true;
+    }
     /**
      * @param array array of String objects
      * @param value value to check array for

@@ -139,27 +139,14 @@ public class StringArrayUtils {
      */ // TODO
     public static boolean isPangramic(String[] array) {
 
-        char[] letter = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-        // create a list to compare the array with.
-        // if element all element matches the elements in the array then return true.
-        for (int i = 0; i < array.length; i++) {
-            // if array contain all of letter
+        String aZ = "abcdefghijklmnopqrstuvwxyz";// char array
 
-            // check the element in the input array
-            String element = array[i];
-
-            // check if the array is contained all elements between a -z,
-            boolean isAtoZ = element.contains("abcdefghijklmnopqrstuvwxyz");
-            if (isAtoZ) {
-
-              return false;
-
-
-            } else if (letter.equals(element)) {
-                return true;
-
+        for ( int i= 0; i<= array.length; i ++) {
+            // create a for loop to check the element
+            if (!contains(array,aZ)){
+            return false;// check to see if the alpha is in the string
             }
-
+            // if not found return false.
         }
         return true;
     }
